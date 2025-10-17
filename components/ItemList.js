@@ -6,7 +6,7 @@ import { PixelButton } from "@/components/PixelButton";
 import { FaTrash } from "react-icons/fa";
 import gsap from "gsap";
 
-export default function ItemList() {
+export function ItemList() {
   const items = useItemStore((s) => s.items);
   const deleteItem = useItemStore((s) => s.deleteItem);
 

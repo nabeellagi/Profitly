@@ -4,9 +4,9 @@ import { H1 } from "@/components/Heading";
 import P from "@/components/Paragraph";
 import { PaperFrame } from "@/components/PaperFrame";
 import { PixelButton } from "@/components/PixelButton";
-import { ItemForm } from "./ItemForm";
-import { ItemList } from "./ItemList";
-import { FileManager } from "./FileManager";
+import { ItemForm } from "@/components/ItemForm";
+import { ItemList } from "@/components/ItemList";
+import { FileManager } from "@/components/FileManager";
 import { FloatingSidebar } from "@/components/FloatingSidebar";
 import MascotHelper from "@/components/MascotHelper";
 

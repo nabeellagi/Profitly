@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { useItemStore } from "@/store/useItemStore";
 import { PixelButton } from "@/components/PixelButton";
 
-export default function FileManager() {
+export function FileManager() {
   const fileInputRef = useRef(null);
   const items = useItemStore((s) => s.items);
   const clearAll = useItemStore((s) => s.clearAll);
