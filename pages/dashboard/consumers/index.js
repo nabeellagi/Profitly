@@ -44,7 +44,7 @@ export default function KepuasanKonsumen() {
             "
           >
             <iframe
-              src="http://nab3588-customerrates.hf.space/"
+              src="https://nab3588-customerrates.hf.space/"
               className="
                 w-full h-full border-none
                 scale-[1.02] sm:scale-100 origin-top
