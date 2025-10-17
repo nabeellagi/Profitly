@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { PixelButton } from "@/components/PixelButton";
 import { useItemStore } from "@/store/useItemStore";
 
-export function ItemForm() {
+export default function ItemForm() {
   const addItem = useItemStore((s) => s.addItem);
   const [name, setName] = useState("");
   const [budget, setBudget] = useState(0);

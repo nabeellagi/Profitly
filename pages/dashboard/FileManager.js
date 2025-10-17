@@ -4,13 +4,12 @@ import { useRef } from "react";
 import { useItemStore } from "@/store/useItemStore";
 import { PixelButton } from "@/components/PixelButton";
 
-export function FileManager() {
+export default function FileManager() {
   const fileInputRef = useRef(null);
   const items = useItemStore((s) => s.items);
   const clearAll = useItemStore((s) => s.clearAll);
   const addItem = useItemStore((s) => s.addItem);
 
-  // ✅ Download current data as JSON
   const handleDownload = () => {
     const dataStr = JSON.stringify(items, null, 2);
     const blob = new Blob([dataStr], { type: "application/json" });
@@ -24,7 +23,6 @@ export function FileManager() {
     URL.revokeObjectURL(url);
   };
 
-  // ✅ Upload and override existing data
   const handleUpload = (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
