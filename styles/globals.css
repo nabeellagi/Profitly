@@ -1,8 +1,15 @@
 @import "tailwindcss";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 @theme inline {
@@ -19,8 +26,118 @@
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+img {
+  image-rendering: optimizeSpeed;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
+.grainbg {
+  background-image: url("/grainbg.svg");
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.pixel-frame {
+  border-style: solid;
+  border-width: 12px;
+  border-image-source: url("/ui/sign.png");
+  border-image-slice: 12 fill;
+  border-image-repeat: stretch;
+  image-rendering: pixelated;
+  background-color: transparent;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  font-family: "Galindo", cursive;
+  /* color: #835C00; */
+  text-align: center;
+  padding: 0.4rem 1.4rem;
+  min-height: 40px;
+  box-sizing: border-box;
+
+  transition: filter 0.2s ease, transform 0.1s ease;
+  will-change: transform, filter;
+}
+
+.pixel-frame:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+.pixel-frame:active {
+  filter: brightness(0.9);
+  transform: translateY(1px);
+}
+
+@theme {
+  --font-galindo: "Galindo", sans-serif;
+  --font-beiruti: "Beiruti", sans-serif;
+}
+
+.paperframe {
+  image-rendering: pixelated;
+  border-style: solid;
+  border-width: 32px;
+  border-image-source: url("/ui/frame.png");
+  border-image-slice: 32 fill;
+  border-image-repeat: stretch;
+  border-image-width: auto;
+  border-image-outset: 0;
+
+  /* 🔧 Responsive inner padding */
+  padding: 0.2rem; /* Base (mobile) */
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+
+  filter: drop-shadow(0 3px 0 #1a1a1a);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* ✨ Adjust padding on larger screens */
+@media (min-width: 640px) {
+  .paperframe {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .paperframe {
+    padding: 1.5rem;
+  }
+}
+
+
+.pixel-search {
+  border-style: solid;
+  border-width: clamp(6px, 1vw, 14px);
+  border-image-source: url("/ui/frame.png");
+  border-image-slice: 12 fill;
+  border-image-repeat: repeat;
+  image-rendering: pixelated;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(0.3rem, 0.5vw, 0.6rem) clamp(0.6rem, 1.2vw, 1rem);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }

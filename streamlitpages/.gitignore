@@ -1,0 +1,52 @@
+# Byte-code files
+*.pyc
+__pycache__/
+*.pyd
+*.so
+
+# Virtual environment
+.venv/
+venv/
+env/
+**/.env
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs and temporary files
+*.log
+*.tmp
+tmp/
+
+# Database files (if applicable)
+*.sqlite3
+*.db
+
+# Configuration files (if sensitive or local-only)
+config.ini
+.env
+
+# Jupyter Notebook specific files
+.ipynb_checkpoints
